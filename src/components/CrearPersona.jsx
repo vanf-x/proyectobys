@@ -111,9 +111,9 @@ const CrearPersona = () => {
         <input
           type="submit"
           value="Enviar"
-          className="text-white bg-[#006DA4] px-4 py-2 rounded my-2"
+          className="text-white bg-[#006DA4] hover:bg-[#1d6081] px-4 py-2 rounded my-2 cursor-pointer transition-colors"
         />
-        <NavLink to="/menu" className="my-2">Cancelar</NavLink>
+        <NavLink to="/menu" className="my-2 hover:underline">Cancelar</NavLink>
         </div>
 
       </form>
