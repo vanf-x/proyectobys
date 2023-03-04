@@ -1,0 +1,11 @@
+.container{
+    background-color: #006DA4;
+    /*align-items: center;*/
+}
+
+.container div{
+    background-color: #ffff;
+}
+.logo{
+    margin: auto;
+}

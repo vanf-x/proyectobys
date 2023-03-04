@@ -1,0 +1,146 @@
+import { faCaretDown, faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import logoGyl from "../assets/img/logoGyl.png";
+
+const Navegador = () => {
+  const [showPersonaMenu, setShowPersonaMenu] = useState(false);
+  const [showBusquedaMenu, setShowBusquedaMenu] = useState(false);
+  const [showEntrevistaMenu, setShowEntrevistaMenu] = useState(false);
+  const [showUserMenu, setShowUserMenu] = useState(false);
+
+
+  const handlePersonaMenuHover = () => {
+    setShowPersonaMenu(true);
+  };
+
+  const handlePersonaMenuLeave = () => {
+    setShowPersonaMenu(false);
+  };
+
+  const handleBusquedaMenuHover = () => {
+    setShowBusquedaMenu(true);
+  };
+
+  const handleBusquedaMenuLeave = () => {
+    setShowBusquedaMenu(false);
+  };
+
+  const handleEntrevistaMenuHover = () => {
+    setShowEntrevistaMenu(true);
+  };
+
+  const handleEntrevistaMenuLeave = () => {
+    setShowEntrevistaMenu(false);
+  };
+
+  const handleUserMenuHover = () => {
+    setShowUserMenu(true);
+  };
+
+  const handleUserMenuLeave = () => {
+    setShowUserMenu(false);
+  };
+  return (
+    <div className="bg-[#F7FEFE] flex justify-around items-center py-2 shadow-md">
+      <NavLink to="/menu">
+      <img src={logoGyl} width="60px"></img>
+      </NavLink>
+      <h1
+        className="font-bold cursor-pointer relative"
+        onMouseEnter={handlePersonaMenuHover}
+        onMouseLeave={handlePersonaMenuLeave}
+      >
+        Persona
+        <FontAwesomeIcon  className="ml-2" icon={faCaretDown}/>
+        {showPersonaMenu && (
+          <div className="absolute bg-white py-2 w-40">
+            <NavLink
+              className="block px-4 py-2 hover:bg-gray-100"
+              to="/persona/crear"
+            >
+              Crear persona
+            </NavLink>
+            <NavLink
+              className="block px-4 py-2 hover:bg-gray-100"
+              to="/persona/encontrar"
+            >
+              Encontrar persona
+            </NavLink>
+          </div>
+        )}
+      </h1>
+      <h1
+        className="font-bold cursor-pointer relative"
+        onMouseEnter={handleBusquedaMenuHover}
+        onMouseLeave={handleBusquedaMenuLeave}
+      >
+        Búsqueda
+        <FontAwesomeIcon  className="ml-2" icon={faCaretDown}/>
+        {showBusquedaMenu && (
+          <div className="absolute bg-white py-2 w-40">
+            <NavLink
+              className="block px-4 py-2 hover:bg-gray-100"
+              to="/busqueda/crear"
+            >
+              Crear búsqueda
+            </NavLink>
+            <NavLink
+              className="block px-4 py-2 hover:bg-gray-100"
+              to="/busqueda/encontrar"
+            >
+              Encontrar búsqueda
+            </NavLink>
+          </div>
+        )}
+      </h1>
+      <h1
+        className="font-bold cursor-pointer relative"
+        onMouseEnter={handleEntrevistaMenuHover}
+        onMouseLeave={handleEntrevistaMenuLeave}
+      >
+        Entrevista
+        <FontAwesomeIcon  className="ml-2" icon={faCaretDown}/>
+        {showEntrevistaMenu && (
+          <div className="absolute bg-white py-2 w-40">
+            <NavLink
+              className="block px-4 py-2 hover:bg-gray-100"
+              to="/entrevista/crear"
+            >
+              Crear entrevista
+            </NavLink>
+            <NavLink
+              className="block px-4 py-2 hover:bg-gray-100"
+              to="/entrevista/encontrar"
+            >
+              Encontrar entrevista
+            </NavLink>
+          </div>
+        )}
+      </h1>
+      <h1
+        className="font-bold cursor-pointer relative bg-[#7DC2BF] rounded py-2 px-4"
+        onMouseEnter={handleUserMenuHover}
+        onMouseLeave={handleUserMenuLeave}
+      >
+        <FontAwesomeIcon  className="mr-2" icon={faUser}/>
+
+        User
+        <FontAwesomeIcon  className="ml-2" icon={faCaretDown}/>
+        {showUserMenu && (
+          <div className="absolute bg-white py-2 w-40">
+            <NavLink
+              className="block px-4  hover:bg-gray-100"
+              to="/logout"
+            >
+              Cerrar Sesión
+            </NavLink>
+
+          </div>
+        )}
+      </h1>
+    </div>
+  );
+};
+export default Navegador
