@@ -55,7 +55,7 @@ const Navegador = () => {
         Persona
         <FontAwesomeIcon  className="ml-2" icon={faCaretDown}/>
         {showPersonaMenu && (
-          <div className="absolute bg-white py-2 w-40">
+          <div className="absolute bg-white py-2 w-40 shadow-md">
             <NavLink
               className="block px-4 py-2 hover:bg-gray-100"
               to="/persona/crear"
@@ -79,7 +79,7 @@ const Navegador = () => {
         Búsqueda
         <FontAwesomeIcon  className="ml-2" icon={faCaretDown}/>
         {showBusquedaMenu && (
-          <div className="absolute bg-white py-2 w-40">
+          <div className="absolute bg-white py-2 w-40 shadow-md">
             <NavLink
               className="block px-4 py-2 hover:bg-gray-100"
               to="/busqueda/crear"
@@ -103,7 +103,7 @@ const Navegador = () => {
         Entrevista
         <FontAwesomeIcon  className="ml-2" icon={faCaretDown}/>
         {showEntrevistaMenu && (
-          <div className="absolute bg-white py-2 w-40">
+          <div className="absolute bg-white py-2 w-40 shadow-md">
             <NavLink
               className="block px-4 py-2 hover:bg-gray-100"
               to="/entrevista/crear"
@@ -120,18 +120,18 @@ const Navegador = () => {
         )}
       </h1>
       <h1
-        className="font-bold cursor-pointer relative bg-[#7DC2BF] rounded py-2 px-4"
+        className="font-bold cursor-pointer relative text-[#006DA4] py-2 px-4"
         onMouseEnter={handleUserMenuHover}
         onMouseLeave={handleUserMenuLeave}
       >
         <FontAwesomeIcon  className="mr-2" icon={faUser}/>
 
         User
-        <FontAwesomeIcon  className="ml-2" icon={faCaretDown}/>
+        <FontAwesomeIcon  className="ml-2 text-black" icon={faCaretDown}/>
         {showUserMenu && (
-          <div className="absolute bg-white py-2 w-40">
+          <div className="absolute bg-white py-2 w-40 shadow-md">
             <NavLink
-              className="block px-4  hover:bg-gray-100"
+              className="block px-4  hover:bg-gray-100 text-black"
               to="/logout"
             >
               Cerrar Sesión

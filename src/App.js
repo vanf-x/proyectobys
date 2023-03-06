@@ -3,7 +3,7 @@ import "./App.css";
 import CrearPersona from "./components/CrearPersona";
 import EncontrarPersona from "./components/EncontrarPersona";
 import EncontrarEntrevista from "./components/EncontrarEntrevista";
-import EncontrarBusqueda from "./components/EncontrarEntrevista";
+import EncontrarBusqueda from "./components/EncontrarBusqueda";
 import CrearEntrevista from "./components/CrearEntrevista";
 import CrearBusqueda from "./components/CrearBusqueda";
 import Login from "./components/Login";
