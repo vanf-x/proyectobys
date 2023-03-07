@@ -3,7 +3,7 @@ import "./App.css";
 import CrearPersona from "./components/CrearPersona";
 import EncontrarPersona from "./components/EncontrarPersona";
 import EncontrarEntrevista from "./components/EncontrarEntrevista";
-import EncontrarBusqueda from "./components/EncontrarEntrevista";
+import EncontrarBusqueda from "./components/EncontrarBusqueda";
 import CrearEntrevista from "./components/CrearEntrevista";
 import CrearBusqueda from "./components/CrearBusqueda";
 import Login from "./components/Login";
@@ -11,6 +11,7 @@ import Navegador from "./components/Navegador";
 import RecuperarContrasena from "./components/RecuperarContrasena";
 import Menu from "./components/Menu";
 import CerrarSesion from "./components/CerrarSesion";
+import Eventos from "./components/Eventos"
 function App() {
   return (
     <>
@@ -25,6 +26,7 @@ function App() {
           <Route path="/busqueda/encontrar" element={<EncontrarBusqueda />} />
           <Route path="/entrevista/crear" element={<CrearEntrevista />} />
           <Route path="/entrevista/encontrar" element={<EncontrarEntrevista />} />
+          <Route path="/entrevista/eventos" element={<Eventos />} />
           <Route path="/recuperacion" element={<RecuperarContrasena />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/logout" element={<CerrarSesion />} />
