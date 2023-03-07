@@ -24,11 +24,11 @@ const CrearPersona = () => {
     <div className="flex flex-col justify-start items-center h-screen">
       <h1 className="text-3xl mt-20 mb-10">Crear Persona</h1>
       {/*FORM*/}
-      <form className="bg-white w-2/3 h-1/2 self-center m-10">
+      <form className="bg-white h-1/2 self-center m-10">
         {/*ARRIBA*/}
         <div className="flex h-1/2">
           {/*ARRIBA IZ*/}
-          <div className="flex justify-around items-center border w-1/2 ">
+          <div className="flex flex-col md:flex md:flex-row justify-around items-center border w-1/2 p-10 bg-red-200">
             <div className="flex justify-start items-center">
               <FontAwesomeIcon className="mr-2" icon={faUser} />
               <input
@@ -47,7 +47,7 @@ const CrearPersona = () => {
             </div>
           </div>
           {/*ARRIBA DER*/}
-          <div className="flex justify-around items-center border w-1/2 ">
+          <div className="flex justify-around items-center border w-1/2 bg-blue-200">
             <div className="flex justify-start items-center">
               <FontAwesomeIcon className="mr-2" icon={faLightbulb} />
               <input
