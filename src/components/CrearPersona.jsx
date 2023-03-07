@@ -10,28 +10,46 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { NavLink } from "react-router-dom";
+import { useFormik } from "formik";
+import { basicSchema } from "../schemas";
 const CrearPersona = () => {
-  //  const [nombre, setNombre] = useState("");
-  //  const [apellido, setApellido] = useState("");
-  //  const [rol, setRol] = useState("");
-  //  const [seniority, setSeniority] = useState("");
-  //  const [linkedin, setLinkedin] = useState("");
-  //  const [fuenteContacto, setFuenteContacto] = useState("");
-  //  const [recruiter, setRecruiter] = useState("");
-  //  const [skills, setSkills] = useState("");
+  const {
+    handleBlur,
+    handleChange,
+    handleSubmit,
+    isSubmitting,
+    values,
+    errors,
+    touched,
+  } = useFormik({
+    initialValues: {
+      nombre: "",
+      apellido: "",
+      rol: "",
+      seniority: "",
+      linkedin: "",
+      fuenteContacto: "",
+      recruiter: "",
+      skills: ""
+    },
+    validationSchema: basicSchema,
+    //onSubmit,
+  });
 
   return (
     <div className="flex flex-col justify-start items-center h-screen">
       <h1 className="text-3xl mt-20 mb-10">Crear Persona</h1>
+      <h3 className="text-[#117BB7]">Información de contacto</h3>
       {/*FORM*/}
       <form className="bg-white h-1/2 self-center m-10">
         {/*ARRIBA*/}
         <div className="flex h-1/2">
           {/*ARRIBA IZ*/}
-          <div className="flex flex-col md:flex md:flex-row justify-around items-center border w-1/2 p-10 bg-red-200">
+          <div className="flex flex-col md:flex md:flex-row justify-around items-center border w-1/2 p-10">
             <div className="flex justify-start items-center">
               <FontAwesomeIcon className="mr-2" icon={faUser} />
               <input
+              id="nombre"
                 type="text"
                 placeholder="Nombre"
                 className="border-b border-black"
@@ -40,6 +58,7 @@ const CrearPersona = () => {
             <div className="flex justify-start items-center">
               <FontAwesomeIcon className="mr-2" icon={faFileSignature} />
               <input
+                id="apellido"
                 type="text"
                 placeholder="Apellido"
                 className="border-b border-black"
@@ -47,7 +66,7 @@ const CrearPersona = () => {
             </div>
           </div>
           {/*ARRIBA DER*/}
-          <div className="flex justify-around items-center border w-1/2 bg-blue-200">
+          <div className="flex justify-around items-center border w-1/2">
             <div className="flex justify-start items-center">
               <FontAwesomeIcon className="mr-2" icon={faLightbulb} />
               <input
