@@ -10,12 +10,9 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { NavLink } from "react-router-dom";
-<<<<<<< HEAD
-import { Seleccion } from "./Selection";
-=======
+import { SelecSkills, SelecRol } from "./Selection";
 import { useFormik } from "formik";
 import { basicSchema } from "../schemas";
->>>>>>> b8bf2441fbe178c90c2c1149b0e6f963fb59e564
 const CrearPersona = () => {
   const {
     handleBlur,
@@ -73,11 +70,7 @@ const CrearPersona = () => {
           <div className="flex justify-around items-center border w-1/2">
             <div className="flex justify-start items-center">
               <FontAwesomeIcon className="mr-2" icon={faLightbulb} />
-              <input
-                type="text"
-                placeholder="Rol"
-                className="border-b border-black"
-              />
+              <SelecRol />
             </div>
             <div className="flex justify-start items-center">
               <FontAwesomeIcon className="mr-2" icon={faMedal} />
@@ -122,7 +115,7 @@ const CrearPersona = () => {
             </div>
             <div className="flex justify-start items-center">
               <FontAwesomeIcon className="mr-2" icon={faGear} />
-              <Seleccion />
+              <SelecSkills />
             </div>
           </div>
         </div>
