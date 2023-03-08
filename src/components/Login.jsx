@@ -30,17 +30,15 @@ function Login() {
   };
 
   const onSubmit = (values) => {
-    /*
+    
     console.log(values.email)
     console.log(values.contrasenia)
     if(validarUsuario(values.email && validarContrasenia(values.contrasenia))){
       <Navigate to="/menu" />
     }else{
-      <Navigate to="/menu" />
+      <Navigate to="/login" />
       alert("Los datos ingresados no son válidos, inténtelo nuevamente.")
     }
-    */
-    <Navigate to="/menu" />
   };
 
   const {
