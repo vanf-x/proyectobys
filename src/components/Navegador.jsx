@@ -132,7 +132,7 @@ const Navegador = () => {
       >
         <FontAwesomeIcon  className="mr-2" icon={faUser}/>
 
-        User
+        Florencia
         <FontAwesomeIcon  className="ml-2 text-black" icon={faCaretDown}/>
         {showUserMenu && (
           <div className="absolute bg-white py-2 w-40 shadow-md">

@@ -26,7 +26,7 @@ const EncontrarPersona = () => {
               <input
                 type="text"
                 placeholder="Rol"
-                className="border-b border-black"
+                className="border-b border-[#D6E4EC]"
               />
             </div>
           </div>
@@ -37,7 +37,7 @@ const EncontrarPersona = () => {
               <input
                 type="text"
                 placeholder="Seniority"
-                className="border-b border-black"
+                className="border-b border-[#D6E4EC]"
               />
             </div>
           </div>
@@ -51,7 +51,7 @@ const EncontrarPersona = () => {
               <input
                 type="text"
                 placeholder="Nombre y apellido"
-                className="border-b border-black"
+                className="border-b border-[#D6E4EC]"
               />
             </div>
           </div>
@@ -62,7 +62,7 @@ const EncontrarPersona = () => {
               <input
                 type="text"
                 placeholder="Skills"
-                className="border-b border-black"
+                className="border-b border-[#D6E4EC]"
               />
             </div>
           </div>

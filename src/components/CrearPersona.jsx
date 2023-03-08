@@ -27,7 +27,8 @@ const CrearPersona = () => {
   console.log(contexto.empleados);
 
   //METODO PARA GUARDAR LOS DATOS DE PERSONA EN EL ARRAY
-  const onSubmit = (values) => {
+  const onSubmit = (values, e) => {
+    e.preventDefault();
     console.log(values);
   };
 
@@ -124,7 +125,7 @@ const CrearPersona = () => {
                 <p className="text-red-600 text-xs ">{errors.selection}</p>
               )}
             </div>
-            
+
             <div className="flex justify-start items-center">
               <FontAwesomeIcon className="mr-2" icon={faMedal} />
               <SelecSeniority />
