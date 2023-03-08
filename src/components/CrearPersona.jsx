@@ -13,9 +13,12 @@ import { NavLink } from "react-router-dom";
 import { useFormik } from "formik";
 import { basicSchema } from "../schemas";
 import { Seleccion } from "./Select";
+import Contexto from "./context/Contexto";
+import { useContext } from "react";
 
 const CrearPersona = () => {
-  
+  const contexto = useContext(Contexto);
+  console.log(contexto.empleados)
 
   return (
     <div className="flex flex-col justify-start items-center h-screen">
