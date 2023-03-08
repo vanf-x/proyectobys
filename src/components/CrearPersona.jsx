@@ -10,32 +10,16 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { NavLink } from "react-router-dom";
+
 import { SelecSkills, SelecRol, SelecSeniority, SelecContact } from "./Selection";
 import { useFormik } from "formik";
 import { basicSchema } from "../schemas";
+import Contexto from "./context/Contexto";
+import { useContext } from "react";
+
 const CrearPersona = () => {
-  const {
-    handleBlur,
-    handleChange,
-    handleSubmit,
-    isSubmitting,
-    values,
-    errors,
-    touched,
-  } = useFormik({
-    initialValues: {
-      nombre: "",
-      apellido: "",
-      rol: "",
-      seniority: "",
-      linkedin: "",
-      fuenteContacto: "",
-      recruiter: "",
-      skills: ""
-    },
-    validationSchema: basicSchema,
-    //onSubmit,
-  });
+  const contexto = useContext(Contexto);
+  console.log(contexto.empleados)
 
   return (
     <div className="flex flex-col justify-start items-center h-screen">

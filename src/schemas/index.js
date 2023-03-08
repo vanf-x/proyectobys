@@ -11,5 +11,5 @@ contrasenia: yup.string().min(5).matches(passwordRules, "Por favor ingrese una c
 
 export const basicSchema = yup.object().shape({
     email: yup.string().email("Por favor ingrese un email válido.").required("Por favor ingrese un mail."),
-    contrasenia: yup.string().required("Por favor ingrese una contraseña.")
+    contrasenia: yup.string().min(5).matches(passwordRules, "Por favor ingrese una contraseña válida.").required("Por favor ingrese una contraseña.")
 })
