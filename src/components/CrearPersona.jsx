@@ -12,29 +12,9 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { NavLink } from "react-router-dom";
 import { useFormik } from "formik";
 import { basicSchema } from "../schemas";
+import { Seleccion } from "./Select";
 const CrearPersona = () => {
-  const {
-    handleBlur,
-    handleChange,
-    handleSubmit,
-    isSubmitting,
-    values,
-    errors,
-    touched,
-  } = useFormik({
-    initialValues: {
-      nombre: "",
-      apellido: "",
-      rol: "",
-      seniority: "",
-      linkedin: "",
-      fuenteContacto: "",
-      recruiter: "",
-      skills: ""
-    },
-    validationSchema: basicSchema,
-    //onSubmit,
-  });
+  
 
   return (
     <div className="flex flex-col justify-start items-center h-screen">
