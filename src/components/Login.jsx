@@ -120,19 +120,21 @@ function Login() {
                 ¿Olvidaste tu contraseña?
               </Link>
             </div>
-            {/*
+            
             <Link
               to="/menu"
               className="bg-[#006DA4] text-white text-lg hover:bg-[#1d6081] transition-colors mt-10 w-2/5 p-2 rounded-xl"
             >
               Ingresar
             </Link>
-            */}
+            
+                {/*
             <button
               type="submit"
               className="bg-[#006DA4] text-white text-lg hover:bg-[#1d6081] transition-colors mt-10 w-2/5 p-2 rounded-xl"
               disabled={isSubmitting}
             >
+            */}
               Ingresar
             </button>
           </form>
