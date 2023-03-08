@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a7f3c8dd.css",
+    "main.js": "/static/js/main.df122eae.js",
+    "static/media/logoGyl.png": "/static/media/logoGyl.6835061297470f6fce00.png",
+    "index.html": "/index.html",
+    "main.a7f3c8dd.css.map": "/static/css/main.a7f3c8dd.css.map",
+    "main.df122eae.js.map": "/static/js/main.df122eae.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a7f3c8dd.css",
+    "static/js/main.df122eae.js"
+  ]
+}
