@@ -10,9 +10,10 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { NavLink } from "react-router-dom";
+
+import { SelecSkills, SelecRol, SelecSeniority, SelecContact } from "./Selection";
 import { useFormik } from "formik";
 import { basicSchema } from "../schemas";
-import { Seleccion } from "./Select";
 import Contexto from "./context/Contexto";
 import { useContext } from "react";
 
@@ -53,19 +54,11 @@ const CrearPersona = () => {
           <div className="flex justify-around items-center border w-1/2">
             <div className="flex justify-start items-center">
               <FontAwesomeIcon className="mr-2" icon={faLightbulb} />
-              <input
-                type="text"
-                placeholder="Rol"
-                className="border-b border-black"
-              />
+              <SelecRol />
             </div>
             <div className="flex justify-start items-center">
               <FontAwesomeIcon className="mr-2" icon={faMedal} />
-              <input
-                type="text"
-                placeholder="Seniority"
-                className="border-b border-black"
-              />
+              <SelecSeniority />
             </div>
           </div>
         </div>
@@ -83,11 +76,7 @@ const CrearPersona = () => {
             </div>
             <div className="flex justify-start items-center">
               <FontAwesomeIcon className="mr-2" icon={faUserGroup} />
-              <input
-                type="text"
-                placeholder="Fuente de contacto"
-                className="border-b border-black"
-              />
+              <SelecContact />
             </div>
           </div>
           {/*ABAJO DER*/}
@@ -102,7 +91,7 @@ const CrearPersona = () => {
             </div>
             <div className="flex justify-start items-center">
               <FontAwesomeIcon className="mr-2" icon={faGear} />
-              <Seleccion />
+              <SelecSkills />
             </div>
           </div>
         </div>
