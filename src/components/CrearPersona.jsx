@@ -13,6 +13,7 @@ import { NavLink } from "react-router-dom";
 import { useFormik } from "formik";
 import { basicSchema } from "../schemas";
 import { Seleccion } from "./Select";
+
 const CrearPersona = () => {
   
 
@@ -29,7 +30,7 @@ const CrearPersona = () => {
             <div className="flex justify-start items-center">
               <FontAwesomeIcon className="mr-2" icon={faUser} />
               <input
-              id="nombre"
+                id="nombre"
                 type="text"
                 placeholder="Nombre"
                 className="border-b border-black"
@@ -98,21 +99,17 @@ const CrearPersona = () => {
             </div>
             <div className="flex justify-start items-center">
               <FontAwesomeIcon className="mr-2" icon={faGear} />
-              <input
-                type="text"
-                placeholder="Skills"
-                className="border-b border-black"
-              />
+              <Seleccion />
             </div>
           </div>
         </div>
         <div className="flex flex-col justify-center items-center m-10">
-        <input
-          type="submit"
-          value="Enviar"
-          className="text-white bg-[#006DA4] hover:bg-[#1d6081] px-4 py-2 rounded my-2 cursor-pointer transition-colors"
-        />
-        <NavLink to="/menu" className="my-2 hover:underline">Cancelar</NavLink>
+          <input
+            type="submit"
+            value="Enviar"
+            className="text-white bg-[#006DA4] hover:bg-[#1d6081] px-4 py-2 rounded my-2 cursor-pointer transition-colors"
+          />
+          <NavLink to="/menu" className="my-2 hover:underline">Cancelar</NavLink>
         </div>
 
       </form>
