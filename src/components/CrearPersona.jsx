@@ -18,24 +18,72 @@ import {
   SelecContact,
 } from "./Selection";
 import { useFormik } from "formik";
-import { basicSchema } from "../schemas";
+import { personaSchema } from "../schemas";
 import Contexto from "./context/Contexto";
-import { useContext } from "react";
-
+import { useContext, useState } from "react";
 const CrearPersona = () => {
+  const regExp = /^[a-zA-ZÀ-ÿ\s]{1,250}$/;
+  const regExpLinkedin =
+    /^(https?:\/\/)?(www\.)?linkedin\.com\/(in|company)\/[a-z0-9_-]+\/?$/;
+  const [nombre, setNombre] = useState("");
+
+  const llenarNombre = (e) => {
+    //setNombre(e.target.value);
+  };
+
+  const comprobarNombre = () => {};
+
   const contexto = useContext(Contexto);
-  console.log(contexto.empleados);
+  const [empleado, setempleado] = useState({
+    nombre: "",
+    apellido: "",
+    linkedin: "",
+  });
+  //console.log(contexto.empleados);
 
   //METODO PARA GUARDAR LOS DATOS DE PERSONA EN EL ARRAY
-  const onSubmit = (values) => {
-    console.log(values);
+  /* const pruebaSubmit = (e) => {
+    e.preventDefault();
+    if(regExp.test(values.nombre) && regExp.test(values.apellido) &regExpLinkedin.test(values.linkedin)){
+      console.log("validado")
+    }else{
+      console.log("no validado")
+    }
+  };
+*/
+  const pruebaSubmit = (e) => {
+    e.preventDefault();
+    contexto.empleados.forEach((e) => {
+      console.log(e);
+    });
+    console.log(typeof nombre);
+    console.log(errors[0] == undefined);
+    console.log(values.nombre);
+    if (
+      (values.nombre == "" || values.apellido == "" || values.linkedin == "") &&
+      errors[0] == undefined
+    ) {
+      alert("Todos los campos están vacíos");
+      return;
+    } 
+    if(empleado.nombre)
+    setempleado({
+      nombre: values.nombre,
+      apellido: values.apellido,
+      linkedin: values.linkedin,
+    });
+    console.log("Empleado:" + empleado);
+    contexto.empleados = [...contexto.empleados, {nombre: values.nombre, apellido: values.apellido, linkedin: values.linkedin}];
+    contexto.empleados.forEach((e) => {
+      console.log(e);
+    });
   };
 
   const {
     handleBlur,
     handleChange,
-    handleSubmit,
-    isSubmitting,
+    //handleSubmit,
+    //isSubmitting,
     values,
     errors,
     touched,
@@ -50,8 +98,8 @@ const CrearPersona = () => {
       recruiter: "",
       skill: "",
     },
-    validationSchema: basicSchema,
-    onSubmit,
+    validationSchema: personaSchema,
+    //onSubmit,
   });
 
   return (
@@ -61,13 +109,13 @@ const CrearPersona = () => {
       {/*FORM*/}
       <form
         className="bg-white h-1/2 w-3/4 self-center m-10"
-        handleSubmit={handleSubmit}
+        onSubmit={pruebaSubmit}
       >
         {/*ARRIBA*/}
         <div className="flex h-1/2">
           {/*ARRIBA IZ*/}
           <div className="flex flex-col md:flex md:flex-row justify-around items-center border w-1/2 p-10">
-            <div className="flex  justify-start items-center">
+            <div className="flex justify-start items-center">
               <div>
                 <FontAwesomeIcon className="mr-2" icon={faUser} />
               </div>
@@ -124,7 +172,7 @@ const CrearPersona = () => {
                 <p className="text-red-600 text-xs ">{errors.selection}</p>
               )}
             </div>
-            
+
             <div className="flex justify-start items-center">
               <FontAwesomeIcon className="mr-2" icon={faMedal} />
               <SelecSeniority />
@@ -205,7 +253,6 @@ const CrearPersona = () => {
           <button
             type="submit"
             className="text-white bg-[#006DA4] hover:bg-[#1d6081] px-4 py-2 rounded my-2 cursor-pointer transition-colors"
-            disabled={isSubmitting}
           >
             Enviar
           </button>
