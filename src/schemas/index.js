@@ -20,3 +20,11 @@ export const basicSchema = yup.object().shape({
     recruiter: yup.string().matches(textRules, "Por favor ingrese un nombre válido.").required("Ingrese el nombre del recruiter."),
     selection: yup.string().oneOf(rol).required()
 })
+
+export const personaSchema = yup.object().shape({
+    nombre: yup.string().matches(textRules, "Por favor ingrese un nombre válido.").required("Ingrese un nombre."),
+    apellido: yup.string().matches(textRules, "Por favor ingrese un apellido válido.").required("Ingrese un apellido."),
+    linkedin: yup.string().url("El formato de la url no es válido.").required("Ingrese la url al Linkedin."),
+   // recruiter: yup.string().matches(textRules, "Por favor ingrese un nombre válido.").required("Ingrese el nombre del recruiter."),
+    //selection: yup.string().oneOf(rol).required()
+})

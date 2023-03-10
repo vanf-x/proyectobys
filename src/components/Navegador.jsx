@@ -43,7 +43,7 @@ const Navegador = () => {
     setShowUserMenu(false);
   };
   return (
-    <div className="bg-[#F7FEFE] flex justify-around items-center py-2 shadow-md">
+    <div className="bg-[#CAF1F0] flex justify-around items-center py-2 shadow-md">
       <NavLink to="/menu">
       <img src={logoGyl} width="60px"></img>
       </NavLink>
