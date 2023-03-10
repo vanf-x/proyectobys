@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import CrearPersona from "./components/CrearPersona";
 import EncontrarPersona from "./components/EncontrarPersona";
+import ListarPersona from "./components/ListarPersona";
 import EncontrarEntrevista from "./components/EncontrarEntrevista";
 import EncontrarBusqueda from "./components/EncontrarBusqueda";
 import CrearEntrevista from "./components/CrearEntrevista";
@@ -24,6 +25,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/persona/crear" element={<CrearPersona />} />
             <Route path="/persona/encontrar" element={<EncontrarPersona />} />
+            <Route path="/persona/listado" element={<ListarPersona />} />
             <Route path="/busqueda/crear" element={<CrearBusqueda />} />
             <Route path="/busqueda/encontrar" element={<EncontrarBusqueda />} />
             <Route path="/entrevista/crear" element={<CrearEntrevista />} />

@@ -5,7 +5,12 @@ import logoGyl from "../assets/img/logoGyl.png";
 import "./login.css";
 import { useFormik } from "formik";
 import { basicSchema } from "../schemas";
-import { Route, Link, BrowserRouter as Redirect, Navigate } from "react-router-dom";
+import {
+  Route,
+  Link,
+  BrowserRouter as Redirect,
+  Navigate,
+} from "react-router-dom";
 
 function Login() {
   const [rememberMe, setRememberMe] = useState(false);
@@ -14,32 +19,33 @@ function Login() {
   const validarUsuario = (email) => {
     if (email != undefined) {
       if (email === "prueba@gylgroup.com") {
-        return true
+        return true;
       }
     }
-    return false
+    return false;
   };
 
   const validarContrasenia = (contrasenia) => {
     if (contrasenia != undefined) {
-      if (contrasenia === "1234") {
-        return true
+      if (contrasenia === "Hola1") {
+        return true;
       }
     }
-    return false
+    return false;
   };
 
   const onSubmit = (values) => {
+
     
     console.log(values.email)
     console.log(values.contrasenia)
     if(validarUsuario(values.email && validarContrasenia(values.contrasenia))){
-      <Navigate to="/menu" />
+      <Redirect to="/menu" />
     }else{
-      <Navigate to="/login" />
+      <Redirect to="/login" />
       alert("Los datos ingresados no son válidos, inténtelo nuevamente.")
     }
-  };
+ };
 
   const {
     handleBlur,
@@ -120,21 +126,22 @@ function Login() {
                 ¿Olvidaste tu contraseña?
               </Link>
             </div>
-            {/*
+            
             <Link
               to="/menu"
               className="bg-[#006DA4] text-white text-lg hover:bg-[#1d6081] transition-colors mt-10 w-2/5 p-2 rounded-xl"
             >
               Ingresar
             </Link>
-            */}
+            {/*
             <button
               type="submit"
               className="bg-[#006DA4] text-white text-lg hover:bg-[#1d6081] transition-colors mt-10 w-2/5 p-2 rounded-xl"
-              disabled={isSubmitting}
             >
+            
               Ingresar
-            </button>
+          </button>
+          */}
           </form>
         </div>
       </div>

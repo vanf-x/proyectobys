@@ -43,7 +43,7 @@ const Navegador = () => {
     setShowUserMenu(false);
   };
   return (
-    <div className="bg-[#F7FEFE] flex justify-around items-center py-2 shadow-md">
+    <div className="bg-[#CAF1F0] flex justify-around items-center py-2 shadow-md">
       <NavLink to="/menu">
       <img src={logoGyl} width="60px"></img>
       </NavLink>
@@ -132,7 +132,7 @@ const Navegador = () => {
       >
         <FontAwesomeIcon  className="mr-2" icon={faUser}/>
 
-        User
+        Florencia
         <FontAwesomeIcon  className="ml-2 text-black" icon={faCaretDown}/>
         {showUserMenu && (
           <div className="absolute bg-white py-2 w-40 shadow-md">
