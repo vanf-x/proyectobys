@@ -133,13 +133,15 @@ function Login() {
             >
               Ingresar
             </Link>
-            
+            {/*
             <button
               type="submit"
               className="bg-[#006DA4] text-white text-lg hover:bg-[#1d6081] transition-colors mt-10 w-2/5 p-2 rounded-xl"
             >
+            
               Ingresar
           </button>
+          */}
           </form>
         </div>
       </div>
