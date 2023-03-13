@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
-import Contexto from "./context/Contexto";
+import Contexto from "../context/Contexto";
 const ListadoPersona = () => {
   const contexto = useContext(Contexto);
   contexto.empleados.forEach((e) => {

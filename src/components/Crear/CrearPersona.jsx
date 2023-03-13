@@ -11,20 +11,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { NavLink } from "react-router-dom";
 
-import {
-  SelecSkills,
-  SelecRol,
-  SelecSeniority,
-  SelecContact,
-} from "./Selection";
+import {SelecSkills,SelecRol,SelecSeniority,SelecContact,} from "../Selection";
 import { useFormik } from "formik";
-import { personaSchema } from "../schemas";
-import Contexto from "./context/Contexto";
+import { personaSchema } from "../../schemas";
+import Contexto from "../../context/Contexto";
 import { useContext, useState } from "react";
+
 const CrearPersona = () => {
   const regExp = /^[a-zA-ZÀ-ÿ\s]{1,250}$/;
-  const regExpLinkedin =
-    /^(https?:\/\/)?(www\.)?linkedin\.com\/(in|company)\/[a-z0-9_-]+\/?$/;
+  const regExpLinkedin = /^(https?:\/\/)?(www\.)?linkedin\.com\/(in|company)\/[a-z0-9_-]+\/?$/;
   const [nombre, setNombre] = useState("");
 
   const llenarNombre = (e) => {
@@ -107,10 +102,7 @@ const CrearPersona = () => {
       <h1 className="text-3xl mt-20 mb-10">Crear Persona</h1>
       <h3 className="text-[#117BB7]">Información de contacto</h3>
       {/*FORM*/}
-      <form
-        className="bg-white h-1/2 w-3/4 self-center m-10"
-        onSubmit={pruebaSubmit}
-      >
+      <form className="bg-white h-1/2 w-3/4 self-center m-10" onSubmit={pruebaSubmit}>
         {/*ARRIBA*/}
         <div className="flex h-1/2">
           {/*ARRIBA IZ*/}
@@ -167,7 +159,7 @@ const CrearPersona = () => {
           <div className="flex flex-col md:flex md:flex-row justify-around items-center border w-1/2 p-10">
             <div className="flex justify-start items-center">
               <FontAwesomeIcon className="mr-2" icon={faLightbulb} />
-              <SelecRol />
+              <SelecRol/>
               {errors.selection && touched.selection && (
                 <p className="text-red-600 text-xs ">{errors.selection}</p>
               )}
