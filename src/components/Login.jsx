@@ -122,9 +122,7 @@ function Login() {
                 />
                 <label htmlFor="rememberMe">Recordarme</label>
               </div>
-              <Link to="/recuperacion" className="text-[#006DA4]">
-                ¿Olvidaste tu contraseña?
-              </Link>
+              
             </div>
             
             <Link

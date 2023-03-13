@@ -57,7 +57,7 @@ const CrearPersona = () => {
       console.log(e);
     });
     console.log(typeof nombre);
-    console.log(errors[0] == undefined);
+    console.log(errors);
     console.log(values.nombre);
     if (
       (values.nombre == "" || values.apellido == "" || values.linkedin == "") &&

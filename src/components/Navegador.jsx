@@ -60,13 +60,13 @@ const Navegador = () => {
               className="block px-4 py-2 hover:bg-gray-100"
               to="/persona/crear"
             >
-              Crear persona
+              Crear
             </NavLink>
             <NavLink
               className="block px-4 py-2 hover:bg-gray-100"
               to="/persona/encontrar"
             >
-              Encontrar persona
+              Encontrar
             </NavLink>
           </div>
         )}
@@ -84,13 +84,13 @@ const Navegador = () => {
               className="block px-4 py-2 hover:bg-gray-100"
               to="/busqueda/crear"
             >
-              Crear búsqueda
+              Crear
             </NavLink>
             <NavLink
               className="block px-4 py-2 hover:bg-gray-100"
               to="/busqueda/encontrar"
             >
-              Encontrar búsqueda
+              Encontrar
             </NavLink>
           </div>
         )}
@@ -108,13 +108,13 @@ const Navegador = () => {
               className="block px-4 py-2 hover:bg-gray-100"
               to="/entrevista/crear"
             >
-              Crear entrevista
+              Crear
             </NavLink>
             <NavLink
               className="block px-4 py-2 hover:bg-gray-100"
               to="/entrevista/encontrar"
             >
-              Encontrar entrevista
+              Encontrar
             </NavLink>
             <NavLink
               className="block px-4 py-2 hover:bg-gray-100"
