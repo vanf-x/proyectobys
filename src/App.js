@@ -1,19 +1,19 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import "./App.css";
-import CrearPersona from "./components/CrearPersona";
-import EncontrarPersona from "./components/EncontrarPersona";
+import "./css/App.css";
+import CrearPersona from "./components/Crear/CrearPersona";
+import EncontrarPersona from "./components/Encontrar/EncontrarPersona";
 import ListarPersona from "./components/ListarPersona";
-import EncontrarEntrevista from "./components/EncontrarEntrevista";
-import EncontrarBusqueda from "./components/EncontrarBusqueda";
-import CrearEntrevista from "./components/CrearEntrevista";
-import CrearBusqueda from "./components/CrearBusqueda";
-import Login from "./components/Login";
+import EncontrarEntrevista from "./components/Encontrar/EncontrarEntrevista";
+import EncontrarBusqueda from "./components/Encontrar/EncontrarBusqueda";
+import CrearEntrevista from "./components/Crear/CrearEntrevista";
+import CrearBusqueda from "./components/Crear/CrearBusqueda";
+import Login from "../src/Pages/pageLogin/Login";
 import Navegador from "./components/Navegador";
-import RecuperarContrasena from "./components/RecuperarContrasena";
-import Menu from "./components/Menu";
-import CerrarSesion from "./components/CerrarSesion";
+import RecuperarContrasena from "./Pages/pageLogin/RecuperarContrasena";
+import Menu from "./Pages/pageMenu/Menu";
+import CerrarSesion from "./Pages/pageMenu/CerrarSesion";
 import Eventos from "./components/Eventos";
-import Provider from "./components/context/Provider";
+import Provider from "./context/Provider";
 function App() {
   return (
     <Provider>

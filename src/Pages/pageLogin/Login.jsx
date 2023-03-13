@@ -1,10 +1,10 @@
 import { faCaretDown, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import logoGyl from "../assets/img/logoGyl.png";
-import "./login.css";
+import logoGyl from "../../assets/img/logoGyl.png";
+import "../../css/login.css";
 import { useFormik } from "formik";
-import { basicSchema } from "../schemas";
+import { basicSchema } from "../../schemas";
 import {
   Route,
   Link,

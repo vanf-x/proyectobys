@@ -1,0 +1,69 @@
+{
+  "persona": [
+    {
+      "id": 1,
+      "nombre": "Marcos",
+      "apellido": "Aguero",
+      "linkedin": "https://www.linkedin.com/in/marcos-aguero-fullstack-developer/",
+      "rol": [
+        "Desarrollador"
+      ],
+      "skill": [
+        "java",
+        "Git",
+        "Mysql"
+      ],
+      "señority": [
+        "Junior"
+      ],
+      "fuente": [
+        "linkedin"
+      ],
+      "recluiter": " "
+    },
+    {
+      "id": 2,
+      "nombre": "nombre2",
+      "apellido": "Apellido2",
+      "linkedin": "link2",
+      "rol": [
+        "Desarrollador2"
+      ],
+      "skill": [
+        "javascript",
+        "Git",
+        "Mysql"
+      ],
+      "señority": [
+        "trainee"
+      ],
+      "fuente": [
+        "linkedin"
+      ],
+      "recluiter": " "
+    },
+    {
+      "id": 3,
+      "nombre": "per3",
+      "apellido": "per3",
+      "linkedin": " ",
+      "rol": [
+        "Lider tecnico"
+      ],
+      "skill": [
+        "java",
+        "Git",
+        "Mysql",
+        "Postgre",
+        "aws"
+      ],
+      "señority": [
+        "Ssr"
+      ],
+      "fuente": [
+        "linkedin"
+      ],
+      "recluiter": " "
+    }
+  ]
+}
