@@ -1,6 +1,4 @@
-import { faCaretDown, faUser } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import logoGyl from "../assets/img/logoGyl.png";
 import "./login.css";
 import { useFormik } from "formik";
@@ -10,9 +8,27 @@ import {
   Link,
   BrowserRouter as Redirect,
   Navigate,
+  useNavigate,
 } from "react-router-dom";
+import Contexto from "./context/Contexto";
 
 function Login() {
+  const { setLogeado } = useContext(Contexto);
+  const navegacion = useNavigate();
+
+  const login = () => {
+    if (
+      validarUsuario(values.email) &&
+      validarContrasenia(values.contrasenia)
+    ) {
+      setLogeado(true);
+      navegacion("/", { replace: true });
+    } else {
+      setLogeado(false);
+      alert("Usuario no válido");
+    }
+  };
+
   const [rememberMe, setRememberMe] = useState(false);
 
   // TEMPORAL
@@ -35,17 +51,17 @@ function Login() {
   };
 
   const onSubmit = (values) => {
-
-    
-    console.log(values.email)
-    console.log(values.contrasenia)
-    if(validarUsuario(values.email && validarContrasenia(values.contrasenia))){
-      <Redirect to="/menu" />
-    }else{
-      <Redirect to="/login" />
-      alert("Los datos ingresados no son válidos, inténtelo nuevamente.")
+    console.log(values.email);
+    console.log(values.contrasenia);
+    if (
+      validarUsuario(values.email && validarContrasenia(values.contrasenia))
+    ) {
+      <Redirect to="/menu" />;
+    } else {
+      <Redirect to="/login" />;
+      alert("Los datos ingresados no son válidos, inténtelo nuevamente.");
     }
- };
+  };
 
   const {
     handleBlur,
@@ -66,7 +82,7 @@ function Login() {
 
   return (
     <div className="flex justify-center h-screen w-screen items-center bg-gradient-to-r from-cyan-900 to-cyan-700">
-      <div className="text-center border-4 border-gray-500 flex flex-col justify-center w-2/3 md:w-1/3 h-3/4 bg-white rounded-xl">
+      <div className="text-center border-4 border-gray-500 flex flex-col justify-center w-5/6 md:w-1/3 h-3/4 bg-white rounded-xl">
         <div>
           <img src={logoGyl} width="150px" className="logo"></img>
           <h1 className="my-3 text-xs text-gray-600">
@@ -74,7 +90,7 @@ function Login() {
           </h1>
           <form
             className="flex flex-col justify-center items-center "
-            onSubmit={handleSubmit}
+            //onSubmit={handleSubmit}
           >
             <input
               type="email"
@@ -122,24 +138,16 @@ function Login() {
                 />
                 <label htmlFor="rememberMe">Recordarme</label>
               </div>
-              <Link to="/recuperacion" className="text-[#006DA4]">
-                ¿Olvidaste tu contraseña?
-              </Link>
             </div>
-            
-            <Link
-              to="/menu"
-              className="bg-[#006DA4] text-white text-lg hover:bg-[#1d6081] transition-colors mt-10 w-2/5 p-2 rounded-xl"
-            >
-              Ingresar
-            </Link>
-            
-            <button
-              type="submit"
-              className="bg-[#006DA4] text-white text-lg hover:bg-[#1d6081] transition-colors mt-10 w-2/5 p-2 rounded-xl"
-            >
-              Ingresar
-          </button>
+            {
+              <button
+                type="submit"
+                className="bg-[#006DA4] text-white text-lg hover:bg-[#1d6081] transition-colors mt-10 w-2/5 p-2 rounded-xl"
+                onClick={login}
+              >
+                Ingresar
+              </button>
+            }
           </form>
         </div>
       </div>

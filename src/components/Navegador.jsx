@@ -1,15 +1,24 @@
 import { faCaretDown, faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import logoGyl from "../assets/img/logoGyl.png";
+import Contexto from "./context/Contexto";
 
 const Navegador = () => {
+  const navegacion = useNavigate();
+  const { setLogeado } = useContext(Contexto);
+
+  const logout = () => {
+    setLogeado(false);
+    navegacion("/login", { replace: true });
+    //función para cuando pone logout no pueda ir para atrás y se tenga que volver a logear
+  };
+
   const [showPersonaMenu, setShowPersonaMenu] = useState(false);
   const [showBusquedaMenu, setShowBusquedaMenu] = useState(false);
   const [showEntrevistaMenu, setShowEntrevistaMenu] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
-
 
   const handlePersonaMenuHover = () => {
     setShowPersonaMenu(true);
@@ -45,7 +54,7 @@ const Navegador = () => {
   return (
     <div className="bg-[#CAF1F0] flex justify-around items-center py-2 shadow-md">
       <NavLink to="/menu">
-      <img src={logoGyl} width="60px"></img>
+        <img src={logoGyl} width="60px"></img>
       </NavLink>
       <h1
         className="font-bold cursor-pointer relative"
@@ -53,7 +62,7 @@ const Navegador = () => {
         onMouseLeave={handlePersonaMenuLeave}
       >
         Persona
-        <FontAwesomeIcon  className="ml-2" icon={faCaretDown}/>
+        <FontAwesomeIcon className="ml-2" icon={faCaretDown} />
         {showPersonaMenu && (
           <div className="absolute bg-white py-2 w-40 shadow-md">
             <NavLink
@@ -77,7 +86,7 @@ const Navegador = () => {
         onMouseLeave={handleBusquedaMenuLeave}
       >
         Búsqueda
-        <FontAwesomeIcon  className="ml-2" icon={faCaretDown}/>
+        <FontAwesomeIcon className="ml-2" icon={faCaretDown} />
         {showBusquedaMenu && (
           <div className="absolute bg-white py-2 w-40 shadow-md">
             <NavLink
@@ -101,7 +110,7 @@ const Navegador = () => {
         onMouseLeave={handleEntrevistaMenuLeave}
       >
         Entrevista
-        <FontAwesomeIcon  className="ml-2" icon={faCaretDown}/>
+        <FontAwesomeIcon className="ml-2" icon={faCaretDown} />
         {showEntrevistaMenu && (
           <div className="absolute bg-white py-2 w-40 shadow-md">
             <NavLink
@@ -130,23 +139,21 @@ const Navegador = () => {
         onMouseEnter={handleUserMenuHover}
         onMouseLeave={handleUserMenuLeave}
       >
-        <FontAwesomeIcon  className="mr-2" icon={faUser}/>
-
+        <FontAwesomeIcon className="mr-2" icon={faUser} />
         Florencia
-        <FontAwesomeIcon  className="ml-2 text-black" icon={faCaretDown}/>
+        <FontAwesomeIcon className="ml-2 text-black" icon={faCaretDown} />
         {showUserMenu && (
           <div className="absolute bg-white py-2 w-40 shadow-md">
-            <NavLink
+            <button
               className="block px-4  hover:bg-gray-100 text-black"
-              to="/logout"
+              onClick={logout}
             >
               Cerrar Sesión
-            </NavLink>
-
+            </button>
           </div>
         )}
       </h1>
     </div>
   );
 };
-export default Navegador
+export default Navegador;
